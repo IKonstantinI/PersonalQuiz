@@ -300,33 +300,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JLz-3Y-SOo">
-                                <rect key="frame" x="80" y="190" width="160.5" height="88.5"/>
+                                <rect key="frame" x="16" y="240" width="288" height="88.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы - 🐙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXr-xo-OtJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="160.5" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы - 🐙" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXr-xo-OtJ">
+                                        <rect key="frame" x="16" y="0.0" width="256" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы осьминог" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qra-Bq-g5Y">
-                                        <rect key="frame" x="28" y="68" width="104" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы осьминог" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qra-Bq-g5Y">
+                                        <rect key="frame" x="92" y="68" width="104" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JXr-xo-OtJ" secondAttribute="trailing" constant="16" id="sag-B1-JW7"/>
+                                    <constraint firstItem="JXr-xo-OtJ" firstAttribute="leading" secondItem="JLz-3Y-SOo" secondAttribute="leading" constant="16" id="zDO-cC-NNp"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gri-vP-EVj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="JLz-3Y-SOo" firstAttribute="centerY" secondItem="OCg-Xe-DSX" secondAttribute="centerY" constant="-50" id="YEW-dK-agl"/>
+                            <constraint firstItem="JLz-3Y-SOo" firstAttribute="centerY" secondItem="OCg-Xe-DSX" secondAttribute="centerY" id="9C0-ZS-PrH"/>
+                            <constraint firstItem="Gri-vP-EVj" firstAttribute="trailing" secondItem="JLz-3Y-SOo" secondAttribute="trailing" constant="16" id="S4o-mr-ibA"/>
                             <constraint firstItem="JLz-3Y-SOo" firstAttribute="centerX" secondItem="OCg-Xe-DSX" secondAttribute="centerX" id="h4F-8U-IDw"/>
+                            <constraint firstItem="JLz-3Y-SOo" firstAttribute="leading" secondItem="Gri-vP-EVj" secondAttribute="leading" constant="16" id="nMz-IS-7Ov"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="8qi-u6-kOO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pVP-B9-HRi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pVP-B9-HRi">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="wmj-Zb-qQw" id="Bue-Mb-R9X"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="definitionLabel" destination="Qra-Bq-g5Y" id="kEq-aK-msJ"/>
+                        <outlet property="resultLabel" destination="JXr-xo-OtJ" id="cc9-xM-G92"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szG-1k-rYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
