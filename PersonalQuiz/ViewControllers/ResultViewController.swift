@@ -16,19 +16,20 @@ final class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.hidesBackButton = true
         
-        let animalCounts = answersChosen.map { $0.animal }.reduce(into: [:]) { counts, animal in  counts[animal, default: 0] += 1
+        mostCommonAnimal()
         }
-        
+    
+    private func mostCommonAnimal () {
+        let animalCounts = answersChosen.map { $0.animal }.reduce(into: [:]) { counts, animal in counts[animal, default: 0] += 1}
         if let mostCommonAnimal = animalCounts.max(by: { $0.value < $1.value})?.key {
             let definition = mostCommonAnimal.definition
             resultLabel.text = "Вы - \(mostCommonAnimal.rawValue)"
             definitionLabel.text = definition
-            } else {
-                print("Массив ответов пуст.")
-            }
         }
+    }
     
     @IBAction func doneButtonAction(_ sender: Any) {
         dismiss(animated: true)
